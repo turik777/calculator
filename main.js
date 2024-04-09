@@ -17,3 +17,7 @@ function divide(a, b) {
 let firstNumber;
 let secondNumber;
 let operator;
+
+function operate(firstNumber, secondNumber, operator) {
+    return operator(firstNumber, secondNumber);
+}
