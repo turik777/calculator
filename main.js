@@ -37,63 +37,53 @@ const nine = document.querySelector("#nine");
 let value;
 
 function displayZero() {
-    display.textContent = 0;
+    display.textContent += 0;
     value = display.textContent;
-    return value;
 }
 
 function displayOne() {
-    display.textContent = 1;
+    display.textContent += 1;
     value = display.textContent;
-    return value;
 }
 
 function displayTwo() {
-    display.textContent = 2;
+    display.textContent += 2;
     value = display.textContent;
-    return value;
 }
 
 function displayThree() {
-    display.textContent = 3;
+    display.textContent += 3;
     value = display.textContent;
-    return value;
 }
 
 function displayFour() {
-    display.textContent = 4;
+    display.textContent += 4;
     value = display.textContent;
-    return value;
 }
 
 function displayFive() {
-    display.textContent = 5;
+    display.textContent += 5;
     value = display.textContent;
-    return value;
 }
 
 function displaySix() {
-    display.textContent = 6;
+    display.textContent += 6;
     value = display.textContent;
-    return value;
 }
 
 function displaySeven() {
-    display.textContent = 7;
+    display.textContent += 7;
     value = display.textContent;
-    return value;
 }
 
 function displayEight() {
-    display.textContent = 8;
+    display.textContent += 8;
     value = display.textContent;
-    return value;
 }
 
 function displayNine() {
-    display.textContent = 9;
+    display.textContent += 9;
     value = display.textContent;
-    return value;
 }
 
 zero.addEventListener("click", displayZero);
