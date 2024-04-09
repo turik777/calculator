@@ -1,25 +1,33 @@
-function add(a, b) {
-    return a + b;
+function addNumbers(a, b) {
+    value = a + b;
+    display.textContent = value;
 }
 
-function subtract(a, b) {
-    return a - b;
+function subtractNumbers(a, b) {
+    value = a - b;
+    display.textContent = value;
 }
 
-function multiply(a, b) {
-    return a * b;
+function multiplyNumbers(a, b) {
+    value = a * b;
+    display.textContent = value;
 }
 
-function divide(a, b) {
-    return a / b;
+function divideNumbers(a, b) {
+    value = a / b;
+    display.textContent = value;
 }
 
 let firstNumber;
 let secondNumber;
 let operator;
 
-function operate(firstNumber, secondNumber, operator) {
-    return operator(firstNumber, secondNumber);
+function operate() {
+    secondNumber = value;
+    if (operator === "addNumbers") return addNumbers(firstNumber, secondNumber);
+    if (operator === "subtractNumbers") return subtractNumbers(firstNumber, secondNumber);
+    if (operator === "multiplyNumbers") return multiplyNumbers(firstNumber, secondNumber);
+    if (operator === "divideNumbers") return divideNumbers(firstNumber, secondNumber);
 }
 
 const display = document.querySelector("#display");
@@ -33,57 +41,96 @@ const six = document.querySelector("#six");
 const seven = document.querySelector("#seven");
 const eight = document.querySelector("#eight");
 const nine = document.querySelector("#nine");
+const add = document.querySelector("#add");
+const subtract = document.querySelector("#subtract");
+const multiply = document.querySelector("#multiply");
+const divide = document.querySelector("#divide");
+const equals = document.querySelector("#equals");
+const clear = document.querySelector("#clear");
 
 let value;
 
 function displayZero() {
     display.textContent += 0;
-    value = display.textContent;
+    value = parseInt(display.textContent);
 }
 
 function displayOne() {
     display.textContent += 1;
-    value = display.textContent;
+    value = parseInt(display.textContent);
 }
 
 function displayTwo() {
     display.textContent += 2;
-    value = display.textContent;
+    value = parseInt(display.textContent);
 }
 
 function displayThree() {
     display.textContent += 3;
-    value = display.textContent;
+    value = parseInt(display.textContent);
 }
 
 function displayFour() {
     display.textContent += 4;
-    value = display.textContent;
+    value = parseInt(display.textContent);
 }
 
 function displayFive() {
     display.textContent += 5;
-    value = display.textContent;
+    value = parseInt(display.textContent);
 }
 
 function displaySix() {
     display.textContent += 6;
-    value = display.textContent;
+    value = parseInt(display.textContent);
 }
 
 function displaySeven() {
     display.textContent += 7;
-    value = display.textContent;
+    value = parseInt(display.textContent);
 }
 
 function displayEight() {
     display.textContent += 8;
-    value = display.textContent;
+    value = parseInt(display.textContent);
 }
 
 function displayNine() {
     display.textContent += 9;
-    value = display.textContent;
+    value = parseInt(display.textContent);
+}
+
+function addOperator() {
+    display.textContent = "";
+    operator = "addNumbers";
+    firstNumber = value;
+    value = 0;
+}
+
+function subtractOperator() {
+    display.textContent = "";
+    operator = "subtractNumbers";
+    firstNumber = value;
+    value = 0;
+}
+
+function multiplyOperator() {
+    display.textContent = "";
+    operator = "multiplyNumbers";
+    firstNumber = value;
+    value = 0;
+}
+
+function divideOperator() {
+    display.textContent = "";
+    operator = "divideNumbers";
+    firstNumber = value;
+    value = 0;
+}
+
+function displayClear() {
+    display.textContent = "";
+    value = 0;
 }
 
 zero.addEventListener("click", displayZero);
@@ -96,3 +143,9 @@ six.addEventListener("click", displaySix);
 seven.addEventListener("click", displaySeven);
 eight.addEventListener("click", displayEight);
 nine.addEventListener("click", displayNine);
+add.addEventListener("click", addOperator);
+subtract.addEventListener("click", subtractOperator);
+multiply.addEventListener("click", multiplyOperator);
+divide.addEventListener("click", divideOperator);
+equals.addEventListener("click", () => operate(firstNumber, secondNumber, operator));
+clear.addEventListener("click", displayClear);
