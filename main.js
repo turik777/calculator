@@ -43,6 +43,7 @@ const six = document.querySelector("#six");
 const seven = document.querySelector("#seven");
 const eight = document.querySelector("#eight");
 const nine = document.querySelector("#nine");
+const float = document.querySelector("#float");
 const add = document.querySelector("#add");
 const subtract = document.querySelector("#subtract");
 const multiply = document.querySelector("#multiply");
@@ -57,7 +58,7 @@ function displayZero() {
         display.textContent = "";
     }
     if (!display.textContent || display.textContent !== "0") display.textContent += 0;
-    value = parseInt(display.textContent);
+    value = Number(display.textContent);
 }
 
 function displayOne() {
@@ -69,7 +70,7 @@ function displayOne() {
     } else {
         display.textContent += 1;
     }
-    value = parseInt(display.textContent);
+    value = Number(display.textContent);
 }
 
 function displayTwo() {
@@ -80,7 +81,7 @@ function displayTwo() {
         display.textContent = 2;
     } else {
         display.textContent += 2;
-    }    value = parseInt(display.textContent);
+    }    value = Number(display.textContent);
 }
 
 function displayThree() {
@@ -91,7 +92,7 @@ function displayThree() {
         display.textContent = 3;
     } else {
         display.textContent += 3;
-    }    value = parseInt(display.textContent);
+    }    value = Number(display.textContent);
 }
 
 function displayFour() {
@@ -102,7 +103,7 @@ function displayFour() {
         display.textContent = 4;
     } else {
         display.textContent += 4;
-    }    value = parseInt(display.textContent);
+    }    value = Number(display.textContent);
 }
 
 function displayFive() {
@@ -113,7 +114,7 @@ function displayFive() {
         display.textContent = 5;
     } else {
         display.textContent += 5;
-    }    value = parseInt(display.textContent);
+    }    value = Number(display.textContent);
 }
 
 function displaySix() {
@@ -124,7 +125,7 @@ function displaySix() {
         display.textContent = 6;
     } else {
         display.textContent += 6;
-    }    value = parseInt(display.textContent);
+    }    value = Number(display.textContent);
 }
 
 function displaySeven() {
@@ -135,7 +136,7 @@ function displaySeven() {
         display.textContent = 7;
     } else {
         display.textContent += 7;
-    }    value = parseInt(display.textContent);
+    }    value = Number(display.textContent);
 }
 
 function displayEight() {
@@ -146,7 +147,7 @@ function displayEight() {
         display.textContent = 8;
     } else {
         display.textContent += 8;
-    }    value = parseInt(display.textContent);
+    }    value = Number(display.textContent);
 }
 
 function displayNine() {
@@ -157,7 +158,12 @@ function displayNine() {
         display.textContent = 9;
     } else {
         display.textContent += 9;
-    }    value = parseInt(display.textContent);
+    }    value = Number(display.textContent);
+}
+
+function displayFloat() {
+    if (!display.textContent.includes(".") && display.textContent !== "") display.textContent += ".";
+    value = Number(display.textContent);
 }
 
 function addOperator() {
@@ -222,6 +228,7 @@ six.addEventListener("click", displaySix);
 seven.addEventListener("click", displaySeven);
 eight.addEventListener("click", displayEight);
 nine.addEventListener("click", displayNine);
+float.addEventListener("click", displayFloat);
 add.addEventListener("click", addOperator);
 subtract.addEventListener("click", subtractOperator);
 multiply.addEventListener("click", multiplyOperator);
