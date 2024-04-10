@@ -49,6 +49,7 @@ const subtract = document.querySelector("#subtract");
 const multiply = document.querySelector("#multiply");
 const divide = document.querySelector("#divide");
 const equals = document.querySelector("#equals");
+const backspace = document.querySelector("#backspace");
 const clear = document.querySelector("#clear");
 
 let value;
@@ -81,7 +82,8 @@ function displayTwo() {
         display.textContent = 2;
     } else {
         display.textContent += 2;
-    }    value = Number(display.textContent);
+    }    
+    value = Number(display.textContent);
 }
 
 function displayThree() {
@@ -92,7 +94,8 @@ function displayThree() {
         display.textContent = 3;
     } else {
         display.textContent += 3;
-    }    value = Number(display.textContent);
+    }    
+    value = Number(display.textContent);
 }
 
 function displayFour() {
@@ -103,7 +106,8 @@ function displayFour() {
         display.textContent = 4;
     } else {
         display.textContent += 4;
-    }    value = Number(display.textContent);
+    }    
+    value = Number(display.textContent);
 }
 
 function displayFive() {
@@ -114,7 +118,8 @@ function displayFive() {
         display.textContent = 5;
     } else {
         display.textContent += 5;
-    }    value = Number(display.textContent);
+    }   
+    value = Number(display.textContent);
 }
 
 function displaySix() {
@@ -125,7 +130,8 @@ function displaySix() {
         display.textContent = 6;
     } else {
         display.textContent += 6;
-    }    value = Number(display.textContent);
+    }    
+    value = Number(display.textContent);
 }
 
 function displaySeven() {
@@ -136,7 +142,8 @@ function displaySeven() {
         display.textContent = 7;
     } else {
         display.textContent += 7;
-    }    value = Number(display.textContent);
+    }    
+    value = Number(display.textContent);
 }
 
 function displayEight() {
@@ -147,7 +154,8 @@ function displayEight() {
         display.textContent = 8;
     } else {
         display.textContent += 8;
-    }    value = Number(display.textContent);
+    }    
+    value = Number(display.textContent);
 }
 
 function displayNine() {
@@ -158,7 +166,8 @@ function displayNine() {
         display.textContent = 9;
     } else {
         display.textContent += 9;
-    }    value = Number(display.textContent);
+    }    
+    value = Number(display.textContent);
 }
 
 function displayFloat() {
@@ -210,6 +219,11 @@ function divideOperator() {
     value = 0;
 }
 
+function displayBackspace() {
+    display.textContent = display.textContent.slice(0, -1);
+    value = Number(display.textContent);
+}
+
 function displayClear() {
     display.textContent = "";
     value = null;
@@ -235,3 +249,4 @@ multiply.addEventListener("click", multiplyOperator);
 divide.addEventListener("click", divideOperator);
 equals.addEventListener("click", () => operate(firstNumber, secondNumber, operator));
 clear.addEventListener("click", displayClear);
+backspace.addEventListener("click", displayBackspace);
