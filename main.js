@@ -1,26 +1,26 @@
 function addNumbers(a, b) {
-    value = a + b;
+    value = Math.round((a + b) * 1000000) / 1000000;
     display.textContent = value;
     firstNumber = value;
 }
 
 function subtractNumbers(a, b) {
-    value = a - b;
+    value = Math.round((a - b) * 1000000) / 1000000;
     display.textContent = value;
     firstNumber = value;
 }
 
 function multiplyNumbers(a, b) {
-    value = a * b;
+    value = Math.round((a * b) * 1000000) / 1000000;
     display.textContent = value;
     firstNumber = value;
 }
 
 function divideNumbers(a, b) {
-    value = a / b;
+    value = Math.round((a / b) * 1000000) / 1000000;
     display.textContent = value;
     firstNumber = value;
-    if (value === Infinity) display.textContent = "What the heck are you doing?!";
+    if (value === Infinity) display.textContent = "Are you ok?!";
 }
 
 let firstNumber;
@@ -30,6 +30,7 @@ let operator;
 function operate(firstNumber, secondNumber, operator) {
     secondNumber = value;
     operator(firstNumber, secondNumber);
+    if (value > 99999999999999 && value !== Infinity) return display.textContent = "Too large!";
 };
 
 const display = document.querySelector("#display");
@@ -52,7 +53,7 @@ const equals = document.querySelector("#equals");
 const backspace = document.querySelector("#backspace");
 const clear = document.querySelector("#clear");
 
-let value;
+let value = 0;
 
 function displayZero() {
     if (value === 0) {
@@ -69,7 +70,7 @@ function displayOne() {
     if (display.textContent === "0") {
         display.textContent = 1;
     } else {
-        display.textContent += 1;
+        if (value.toString().length < 14) display.textContent += 1;
     }
     value = Number(display.textContent);
 }
@@ -81,7 +82,7 @@ function displayTwo() {
     if (display.textContent === "0") {
         display.textContent = 2;
     } else {
-        display.textContent += 2;
+        if (value.toString().length < 14) display.textContent += 2;
     }    
     value = Number(display.textContent);
 }
@@ -93,7 +94,7 @@ function displayThree() {
     if (display.textContent === "0") {
         display.textContent = 3;
     } else {
-        display.textContent += 3;
+        if (value.toString().length < 14) display.textContent += 3;
     }    
     value = Number(display.textContent);
 }
@@ -105,7 +106,7 @@ function displayFour() {
     if (display.textContent === "0") {
         display.textContent = 4;
     } else {
-        display.textContent += 4;
+        if (value.toString().length < 14) display.textContent += 4;
     }    
     value = Number(display.textContent);
 }
@@ -117,7 +118,7 @@ function displayFive() {
     if (display.textContent === "0") {
         display.textContent = 5;
     } else {
-        display.textContent += 5;
+        if (value.toString().length < 14) display.textContent += 5;
     }   
     value = Number(display.textContent);
 }
@@ -129,7 +130,7 @@ function displaySix() {
     if (display.textContent === "0") {
         display.textContent = 6;
     } else {
-        display.textContent += 6;
+        if (value.toString().length < 14) display.textContent += 6;
     }    
     value = Number(display.textContent);
 }
@@ -141,7 +142,7 @@ function displaySeven() {
     if (display.textContent === "0") {
         display.textContent = 7;
     } else {
-        display.textContent += 7;
+        if (value.toString().length < 14) display.textContent += 7;
     }    
     value = Number(display.textContent);
 }
@@ -153,7 +154,7 @@ function displayEight() {
     if (display.textContent === "0") {
         display.textContent = 8;
     } else {
-        display.textContent += 8;
+        if (value.toString().length < 14) display.textContent += 8;
     }    
     value = Number(display.textContent);
 }
@@ -165,7 +166,7 @@ function displayNine() {
     if (display.textContent === "0") {
         display.textContent = 9;
     } else {
-        display.textContent += 9;
+        if (value.toString().length < 14) display.textContent += 9;
     }    
     value = Number(display.textContent);
 }
@@ -226,7 +227,7 @@ function displayBackspace() {
 
 function displayClear() {
     display.textContent = "";
-    value = null;
+    value = 0;
     firstNumber = value;
     secondNumber = value;
     operator = null;
