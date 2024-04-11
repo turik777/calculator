@@ -12,24 +12,33 @@ body {
 }
 
 .calculator {
-    background-color: #888888;
+    background-color: #3c3c3c;
     height: 50vh;
     width: 35vh;
     padding: 2vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 2vh;
+    box-shadow: 0.5vh 0.5vh #212121,
+          inset 0.3vh 0.3vh 1vh 0.7vh #555555,
+                1vh 1vh #212121,
+                3vh 3vh 4vh rgba(0,0,0,0.30), 
+                2.3vh 2.3vh 1.2vh rgba(0,0,0,0.22);
 }
 
 #display {
-    height: 7vh;
+    height: 8vh;
     background-color: #fff;
-    margin-bottom: 4vh;
+    margin-top: 1vh;
     padding-right: 1vh;
     display: flex;
     justify-content: end;
     align-items: end;
     font-size: 4vh;
+    border-radius: 1vh;
+    background-color: #A2B077;
+    box-shadow: inset 0.3vh 0.3vh 1vh 0.7vh #5e6745;
 }
 
 .buttons {
@@ -51,8 +60,56 @@ body {
     justify-content: space-between;
 }
 
+button {
+    width: 6.8vh;
+    height: 6.2vh;
+    font-size: 4vh;
+    border: none;
+    background-color: #CCCCCC;
+    border-radius: 0.5vh;
+    box-shadow: 0.3vh 0.3vh #888888,
+          inset 0.3vh 0.3vh 0.5vh 0.7vh #AAAAAA;
+    
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active,
+#equals:active,
+#clear:active {
+    opacity: 0.5;
+    box-shadow: none;
+    position: relative;
+    left: 0.3vh;
+    top: 0.3vh;
+    box-shadow: inset 0.3vh 0.3vh 0.5vh 0.7vh #AAAAAA;
+}
+
 #equals {
     height: 13.7vh;
+    background-color: #ffb829;
+    box-shadow: 0.3vh 0.3vh #c78f20,
+          inset 0.3vh 0.3vh 0.5vh 0.7vh #d99d25;
+}
+
+#equals:active {
+    box-shadow: inset 0.3vh 0.3vh 0.5vh 0.7vh #d99d25;
+}
+
+#clear {
+    background-color: #fa3434;
+    box-shadow: 0.3vh 0.3vh #ab2323,
+          inset 0.3vh 0.3vh 0.5vh 0.7vh #c12727;
+}
+
+#clear:active {
+    box-shadow: inset 0.3vh 0.3vh 0.5vh 0.7vh #c12727;
+}
+
+#zero {
+    width: 15vh;
 }
 
 .row-1,
@@ -62,15 +119,5 @@ body {
 .row-5 {
     display: flex;
     justify-content: space-between;
-    gap: 0.5vh;
-}
-
-#zero {
-    width: 15.3vh;
-}
-
-button {
-    width: 7.3vh;
-    height: 6.5vh;
-    font-size: 4vh;
+    gap: 1vh;
 }
