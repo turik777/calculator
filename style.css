@@ -55,13 +55,18 @@ body {
     height: 13.7vh;
 }
 
+.row-1,
+.row-2,
+.row-3,
+.row-4,
 .row-5 {
     display: flex;
     justify-content: space-between;
+    gap: 0.5vh;
 }
 
 #zero {
-    width: 15vh;
+    width: 15.3vh;
 }
 
 button {
