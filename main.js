@@ -94,6 +94,32 @@ buttons.forEach(button => {
             operator = null;
         }
     })
+
+    document.addEventListener("keydown", event => {
+        if (event.key === button.textContent.toLowerCase() || event.key.toLowerCase() === button.id) {
+            button.click();
+            button.classList.add("active");
+        }
+    });
+    document.addEventListener("keyup", event => {
+        if (event.key === button.textContent.toLowerCase() || event.key.toLowerCase() === button.id) {
+            button.classList.remove("active");
+        }
+    })
 });
 
 equals.addEventListener("click", () => operate(firstNumber, secondNumber, operator));
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Enter") {equals.click(); equals.classList.add("active");}
+    if (event.key === "Delete") {clear.click(); clear.classList.add("active");}
+    if (event.key === "*") {multiply.click(); multiply.classList.add("active");}
+    if (event.key === "/") {divide.click(); divide.classList.add("active");}
+    
+});
+document.addEventListener("keyup", event => {
+    if (event.key === "Enter") equals.classList.remove("active");
+    if (event.key === "Delete") clear.classList.remove("active");
+    if (event.key === "*") multiply.classList.remove("active");
+    if (event.key === "/") divide.classList.remove("active");
+});
