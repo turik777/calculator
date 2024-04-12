@@ -9,6 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(images/table.jpg);
 }
 
 .calculator {
@@ -39,6 +40,7 @@ body {
     border-radius: 1vh;
     background-color: #A2B077;
     box-shadow: inset 0.3vh 0.3vh 1vh 0.7vh #5e6745;
+    overflow: hidden;
 }
 
 .buttons {
@@ -79,6 +81,15 @@ button:hover {
 button:active,
 #equals:active,
 #clear:active {
+    opacity: 0.5;
+    box-shadow: none;
+    position: relative;
+    left: 0.3vh;
+    top: 0.3vh;
+    box-shadow: inset 0.3vh 0.3vh 0.5vh 0.7vh #AAAAAA;
+}
+
+.active {
     opacity: 0.5;
     box-shadow: none;
     position: relative;
